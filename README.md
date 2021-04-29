@@ -1,8 +1,13 @@
 # roboverse
-A set of environments utilizing [pybullet](https://github.com/bulletphysics/bullet3) for simulation of robotic manipulation tasks. 
+A set of environments utilizing [pybullet](https://github.com/bulletphysics/bullet3) for simulation of robotic manipulation tasks.
+
 
 ## Usage
+
 Creating and using environments is simple:
+
+#### `gym.spaces.Dict`
+
 ```python
 import roboverse
 env = roboverse.make('Widow250DoubleDrawerOpenNeutral-v0', gui=True)
@@ -10,15 +15,34 @@ env.reset()
 for _ in range(25):
     env.step(env.action_space.sample())
 ```
+
+Observations will be returned as `gym.spaces.Dict` objects with `image` and `state` keys.
+
+Creating and using environments is simple:
+
+#### `gym.spaces.Box`
+
+```python
+import roboverse
+env = roboverse.make('D3Widow250DoubleDrawerOpenNeutral-v0', gui=True)
+env.reset()
+for _ in range(25):
+    env.step(env.action_space.sample())
+```
+
+Observations will be returned as `gym.spaces.Box` objects with no keys, only images.
+
+
+
 ## Setup
 I recommend using [conda](https://docs.anaconda.com/anaconda/install/) for setup:
 
 ```
-conda create -n roboverse python=3.6
+conda create -n roboverse python=3.8
 source activate roboverse
 pip install -r requirements.txt
 ```
-When using this repository with other projects, run `pip install -e .` in the root directory of this repo. 
+When using this repository with other projects, run `pip install -e .` in the root directory of this repo.
 
 To test if things are working by visualizing a scripted robot policy, run the following command:
 
