@@ -4,9 +4,9 @@ A set of environments utilizing [pybullet](https://github.com/bulletphysics/bull
 
 ## Usage
 
-Creating and using environments is simple:
+Creating and using environments is simple. Depending on the observation space you want to use, either use the original environments, or the 'd3' environments.
 
-#### `gym.spaces.Dict` Observations
+#### `gym.spaces.Dict`
 
 ```python
 import roboverse
@@ -19,7 +19,7 @@ for _ in range(25):
 Observations will be returned as `gym.spaces.Dict` objects with `image` and `state` keys.
 
 
-#### `gym.spaces.Box` Observations
+#### `gym.spaces.Box`
 
 ```python
 import roboverse
