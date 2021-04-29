@@ -6,7 +6,7 @@ A set of environments utilizing [pybullet](https://github.com/bulletphysics/bull
 
 Creating and using environments is simple:
 
-#### `gym.spaces.Dict`
+#### Observations as `gym.spaces.Dict`
 
 ```python
 import roboverse
@@ -18,9 +18,8 @@ for _ in range(25):
 
 Observations will be returned as `gym.spaces.Dict` objects with `image` and `state` keys.
 
-Creating and using environments is simple:
 
-#### `gym.spaces.Box`
+#### Observations as `gym.spaces.Box`
 
 ```python
 import roboverse
